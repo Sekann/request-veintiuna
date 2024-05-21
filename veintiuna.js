@@ -10,12 +10,19 @@ repartir(2, manoJugador)
 console.log('Mano del jugador => ', manoJugador)
 // console.log('Baraja tras repartir al jugador => ',baraja);
 
+const manoCrupier = []
+repartir(2, manoCrupier)
+console.log('Mano del Crupier => ', manoCrupier)
+
 while (!seHaPlantado && !teHasPasao(manoJugador)) {
     jugar()
 }
 
 if (seHaPlantado) {
     console.log('Tienes un ', sumarValoresMano(manoJugador));
+    if (sumarValoresMano(manoJugador)>sumarValoresMano(manoCrupier) && sumarValoresMano(manoJugador)<=21){
+        console.log('Haz Ganado');
+    }
 } else {
     console.log('Gana la casa chaval');
 }
